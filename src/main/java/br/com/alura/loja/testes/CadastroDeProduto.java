@@ -1,9 +1,7 @@
 package br.com.alura.loja.testes;
 import java.math.BigDecimal;
 import java.util.List;
-
 import javax.persistence.EntityManager;
-
 import br.com.alura.loja.dao.CategoriaDao;
 import br.com.alura.loja.dao.ProdutoDao;
 import br.com.alura.loja.modelo.Categoria;
@@ -22,6 +20,9 @@ public class CadastroDeProduto {
 		
 		List<Produto> todos = produtoDao.buscarPorNomeDaCategoria("CELULARES");
 		todos.forEach(p2 -> System.out.println(p2.getNome()));
+		
+		BigDecimal precoDoProduto = produtoDao.buscarPrecoDoProdutoComNome("Xiaomi Redmi");
+		System.out.println("preço do produdo: " + precoDoProduto);
 	}
 
 	private static void cadastrarProduto() {
