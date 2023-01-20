@@ -13,4 +13,11 @@ public class JPAUtil {
 		return FACTORY.createEntityManager();
 	}
 	
+	private static final EntityManagerFactory MYFACTORY = Persistence
+			.createEntityManagerFactory("mysql");
+	
+	public static EntityManager getMyEntityManager() {
+		return MYFACTORY.createEntityManager();
+	}
+	
 }
